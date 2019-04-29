@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/topAnimeFragment"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="Top Anime"/>
+    <item
+            android:id="@+id/topMangaFragment"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Top Manga"/>
+    <item
+            android:id="@+id/searchFragment"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Search"/>
+</menu>

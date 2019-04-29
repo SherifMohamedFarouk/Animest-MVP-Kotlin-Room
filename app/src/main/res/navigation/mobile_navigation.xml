@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/mobile_navigation"
+            app:startDestination="@id/topAnimeFragment">
+
+    <fragment android:id="@+id/topAnimeFragment" android:name="com.veirn.animest.navigation.TopAnimeFragment"
+              android:label="fragment_top_anime" tools:layout="@layout/fragment_top_anime">
+        <action android:id="@+id/action_topAnimeFragment_to_topMangaFragment" app:destination="@id/topMangaFragment"/>
+    </fragment>
+    <fragment android:id="@+id/topMangaFragment" android:name="com.veirn.animest.navigation.TopMangaFragment"
+              android:label="fragment_top_manga" tools:layout="@layout/fragment_top_manga">
+        <action android:id="@+id/action_topMangaFragment_to_searchFragment" app:destination="@id/searchFragment"/>
+        <action android:id="@+id/action_topMangaFragment_to_topAnimeFragment" app:destination="@id/topAnimeFragment"/>
+    </fragment>
+    <fragment android:id="@+id/searchFragment" android:name="com.veirn.animest.navigation.SearchFragment"
+              android:label="fragment_search" tools:layout="@layout/fragment_search"/>
+</navigation>

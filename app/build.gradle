@@ -1,0 +1,115 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.veirn.animest"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+buildscript {
+    ext.kotlin_version = '1.2.30'
+    ext.RXkotlin_version = '2.3.0'
+    ext.rxjava_Version = '2.2.0'
+    ext.rxAndroid_Version = '2.0.2'
+    ext.dagger2_version = '2.16'
+    ext.android_support_version = '28.0.0'
+    ext.glideVersion = '4.9.0'
+    ext.room_version = '1.1.1'
+    ext.volley_version = '1.1.1'
+    ext.lifecycle_version = '2.0.0'
+    ext.navigation_version = '1.0.0'
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.core:core-ktx:1.1.0-alpha05'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+    // Support Design
+    implementation "com.android.support:design:$android_support_version"
+    implementation "com.android.support:cardview-v7:$android_support_version"
+
+    // RecyclerView
+    implementation "com.android.support:recyclerview-v7:$android_support_version"
+
+
+    //Mockito // Testing
+    testImplementation 'org.mockito:mockito-inline:2.11.0'
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+
+    // Room
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
+
+    //OkHTTP Logging Interceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // Dagger 2
+    implementation "com.google.dagger:dagger:$dagger2_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
+    compileOnly "org.glassfish:javax.annotation:3.1.1"
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_Version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$RXkotlin_version"
+    implementation "com.android.volley:volley:$volley_version"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    //volley
+    implementation 'com.android.volley:volley:1.1.1'
+
+//Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Android KTX
+    implementation 'androidx.core:core-ktx:1.0.0-beta01'
+
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:0.10.5"
+
+    // Navigation
+    implementation "android.arch.navigation:navigation-fragment:$navigation_version"
+    implementation "android.arch.navigation:navigation-ui:$navigation_version"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "android.arch.navigation:navigation-ui-ktx:$navigation_version"
+
+    kapt 'com.android.databinding:compiler:2.3.1'
+    implementation 'com.android.support:multidex:1.0.3'
+
+}
